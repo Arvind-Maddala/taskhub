@@ -1,11 +1,14 @@
 import React from 'react';
-import {Players} from '../../container';
+import {List, Navbar} from '../../components'
 import './style.css';
 
-export default function Home() {
+
+export default function Home({handleSignOut}) {
+
   return (
     <div  className="home">
-      <Players />
+      <Navbar handleSignOut={handleSignOut}/>
+      <List />
     </div>
   )
 }
