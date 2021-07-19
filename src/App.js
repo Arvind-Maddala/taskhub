@@ -3,6 +3,7 @@ import {Home, SignUp} from './pages';
 import { auth, providerFaceBook, providerGoogle} from './firebase'
 import {useDispatch,useSelector} from 'react-redux';
 import {setActiveUser, setUserLogOutState, selectUserName, selectUserEmail} from './features/userSlice';
+import './App.css';
 
 
 function App() {

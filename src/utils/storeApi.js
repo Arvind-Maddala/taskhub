@@ -1,4 +1,3 @@
+  
 import React from 'react';
-
-export const CardContext = React.createContext();
-
+export default React.createContext(null);

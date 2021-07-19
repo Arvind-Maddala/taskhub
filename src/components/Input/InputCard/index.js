@@ -3,7 +3,7 @@ import { IconButton } from '@material-ui/core';
 import { Button, InputBase, Paper } from '@material-ui/core';
 import ClearIcon from '@material-ui/icons/Clear';
 import {makeStyles, alpha} from '@material-ui/core/styles';
-import { CardContext } from '../../../utils/storeApi';
+import  CardContext  from '../../../utils/storeApi';
 
 
 const useStyle = makeStyles((theme) =>({
@@ -40,7 +40,7 @@ const InputCard = ({setOpen, listId, type}) => {
     setCardTitle('')
     setOpen(false)
     } else {
-      addMoreCard(cardTitle)
+      addMoreList(cardTitle)
       setCardTitle('')
     setOpen(false)
     }
