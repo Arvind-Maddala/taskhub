@@ -15,13 +15,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 320px;
 }
 .navbar__name {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  margin: 0 0.7rem;
 }
 .navbar__name > img {
   margin-left:0.75rem;

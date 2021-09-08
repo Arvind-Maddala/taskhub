@@ -12,7 +12,6 @@ function App() {
 
   const handleSignInGoogle = () => {
     auth.signInWithPopup(providerGoogle).then((res)=> {
-      console.log(res)
       dispatch(setActiveUser({
         userName: res.user.displayName,
         photoURL: res.user.photoURL

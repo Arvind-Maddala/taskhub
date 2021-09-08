@@ -11,14 +11,14 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 const useStyle = makeStyles((theme) =>({
   root: {
     display: 'flex',
-    minHeight: '100vh',
-    backgroundColor:'green',
+    minHeight: '90vh',
     width: '100%',
-    overflowY: 'auto'
+    overflowY: 'auto',
   }
 }))
 export default function Home({handleSignOut}) {
   const [data,setData] = useState(store);
+  const [backgroundImage, setBackgroundImage] = useState('green')
   const classes = useStyle()
   const addMoreCard = (title, listId) => {
     const newCardId = uuid();
@@ -115,13 +115,13 @@ export default function Home({handleSignOut}) {
   return (
     <CardContext.Provider value={{addMoreCard, addMoreList,updateListTitle}}>
       <DragDropContext onDragEnd={onDragEnd}>
-      <div  className="home">
-      <Navbar handleSignOut={handleSignOut}/>
+      <div  className="home" >
+      <Navbar handleSignOut={handleSignOut} setBackgroundImage={setBackgroundImage}/>
       </div>
       <Droppable droppableId="app" type="list" direction="horizontal">
         {(provided)=> {
           return (
-            <div className={classes.root} ref={provided.innerRef} {...provided.droppableProps}>
+            <div className={classes.root} ref={provided.innerRef} {...provided.droppableProps} style={{backgroundColor:`${backgroundImage}`, backgroundImage: `url(${backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundSize:'cover',}} >
             {data.listIds.map((listId,index) => {
               const list = data.lists[listId];
               return <List list={list} key={listId} index={index}/>
@@ -132,10 +132,10 @@ export default function Home({handleSignOut}) {
             </div>
           )
         }}
-     
       </Droppable>
       </DragDropContext>
     </ CardContext.Provider>
     
   )
 }
+ 
