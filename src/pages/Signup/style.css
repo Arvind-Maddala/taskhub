@@ -90,4 +90,23 @@ cursor: pointer;
   .btn{
     width: 100%;
   }
+  .signup__container--left {
+    width: 100%;
+  }
+  .signup{
+    padding: 1rem;
+    
+  }
+  .signup__container--left h1{
+    color: rgb(10,1,96);
+  font-size:2rem;
+  font-weight: 700;
+  margin-bottom:0.25rem;
+  }
+  .signup__container--left p{
+    color: rgba(73, 74, 168,0.6);
+    font-size:1rem;
+    margin-bottom:0.25rem;
+  }
+  
 }

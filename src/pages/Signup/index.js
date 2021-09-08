@@ -8,7 +8,7 @@ export default function SignUp({handleSignInGoogle}) {
     <div className="signup">
       <div className="signup__container">
         <div className="signup__container--left">
-          <h1>Welcome to <span className="signup__title">TaskHub</span></h1>
+          <h1>Welcome to <strong className="signup__title">TaskHub</strong></h1>
           <p>Create account to manage your tasks accordingly.</p>
           <div className="signup__btn">
           <button className="btn btn--google" onClick={handleSignInGoogle}><i className="fab fa-google"></i> Login with Google</button>
