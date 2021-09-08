@@ -35,7 +35,7 @@ export default function Navbar({handleSignOut, setBackgroundImage}) {
     
         <div>
         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        Settings <i class="fas fa-caret-down"></i>
+        Settings <i className="fas fa-caret-down"></i>
       </Button>
       <Menu
         id="simple-menu"

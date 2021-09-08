@@ -6,7 +6,7 @@ import {getImages} from '../../utils/imageApi';
 
 const useStyles = makeStyles((theme) => ({
   drawer:{
-    width: '400px',
+    width: '300px',
   },
   menu:{
     marginTop:theme.spacing(2),
