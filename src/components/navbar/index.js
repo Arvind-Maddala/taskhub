@@ -20,7 +20,7 @@ export default function Navbar({handleSignOut, setBackgroundImage}) {
         <img src={store.user.photoURL} alt="avatar" style={{width:'36px', borderRadius:'50%'}}/>
        <p><span className="navbar__username">{store.user.userName.split(" ")[0]}</span> </p>
        </div>
-        <button className="signout--button" onClick={handleSideMenu} > Change Background </button>
+        <button className="navbar__changeBGBtn" onClick={handleSideMenu} > Change Background </button>
         <button className="signout--button" onClick={handleSignOut}> <i className="fas fa-sign-out-alt"></i>Signout</button>
         <SideMenu openSideMenu={openSideMenu} setOpenSideMenu = {setOpenSideMenu} setBackgroundImage={setBackgroundImage} />
       </div>
