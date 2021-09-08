@@ -51,3 +51,7 @@
   cursor: pointer;
   margin-right: 0.75rem;
 }
+.fa-caret-down{
+  margin-left: 0.25rem;
+  font-size: 1.5rem;
+}
