@@ -1,6 +1,6 @@
 import React from 'react';
 import {Home, SignUp} from './pages';
-import { auth, providerFaceBook, providerGoogle} from './firebase'
+import { auth, providerGoogle} from './firebase'
 import {useDispatch,useSelector} from 'react-redux';
 import {setActiveUser, setUserLogOutState, selectUserName} from './features/userSlice';
 import './App.css';
@@ -12,6 +12,7 @@ function App() {
 
   const handleSignInGoogle = () => {
     auth.signInWithPopup(providerGoogle).then((res)=> {
+      console.log(res)
       dispatch(setActiveUser({
         userName: res.user.displayName,
         photoURL: res.user.photoURL
@@ -21,16 +22,7 @@ function App() {
     })
   }
 
-  const handleSignInFaceBook =  async () => {
-    await auth.signInWithPopup(providerFaceBook).then((res)=> {
-      dispatch(setActiveUser({
-        userName: res.user.displayName,
-        photoURL: res.user.photoURL
-      }))
-    }).catch((err) => {
-      console.log(err);
-    })
-  }
+
 
   const handleSignOut = () => {
     auth.signOut().then(() => {
@@ -42,7 +34,7 @@ function App() {
 
   return (
     <div className="app">
-   {userName ? (<Home handleSignOut={handleSignOut}/>) :(<SignUp handleSignInGoogle={handleSignInGoogle} handleSignInFaceBook={handleSignInFaceBook}/>)}
+   {userName ? (<Home handleSignOut={handleSignOut}/>) :(<SignUp handleSignInGoogle={handleSignInGoogle}/>)}
     </div>
   );
 }
